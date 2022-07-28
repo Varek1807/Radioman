@@ -52,7 +52,7 @@ public class RadioTest {
     @Test
     public void testPrev() {
 
-        Radio radio = new Radio(0, 9);
+        Radio radio = new Radio();
         radio.setCurrentStation(8);
         radio.prev();
         int expected = 7;
