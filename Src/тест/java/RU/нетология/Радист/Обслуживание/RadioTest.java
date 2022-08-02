@@ -1,111 +1,118 @@
-package ru.netology.Radioman.service;
+ru package.netology.Radioman.service;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+org  import.junit.jupiter.api.Утверждения;
+org import.junit.jupiter.api.Test;
 
-public class RadioTest {
+Общедоступный  класс  RadioTest {
 
-
-    @Test
-    public void testNext() {
-
-        Radio radio = new Radio(10);
-        radio.setCurrentStation(5);
-        radio.next();
-        int expected = 6;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
+    @Тест
+    shouldSetStationIfMoreMax  аннулирует  public() {
+        радио -радио = новое  радио ();
+        радиостанция.Настройка текущей станции(11);
+        ожидаемый  результат = 0;
+        фактический  int = radio.getCurrentStation();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
     }
 
-    @Test
-    public void testNextElseMax() {
+    @Тест
+    testNext  аннулирует  публичный() {
 
-        Radio radio = new Radio(10);
-        radio.setCurrentStation(9);
+        радио -радио = новое  радио ();
+        радиостанция.Настройка текущей станции(5);
         radio.next();
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
+        ожидаемое  число = 6;
+        фактический  int = radio.getCurrentStation();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
+    }
+
+    @Тест
+    testNextElseMax  аннулирует  общедоступный() {
+
+        радио -радио = новое  радио ();
+        радиостанция.Настройка текущей станции(9);
+        radio.next();
+        ожидаемый  результат = 0;
+        фактический  int = radio.getCurrentStation();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
 
     }
 
-    @Test
-    public void testPrevElseMin() {
+    @Тест
+    testPrevElseMin  аннулирует  публичный доступ() {
 
-        Radio radio = new Radio(10);
+        радио -радио = новое  радио ();
         radio.setCurrentStation(0);
         radio.prev();
-        int expected = 9;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
+        ожидаемое  число = 9;
+        фактический  int = radio.getCurrentStation();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
 
     }
 
-    @Test
-    public void testPrev() {
+    @Тест
+    testPrev  аннулирует  общедоступный() {
 
-        Radio radio = new Radio();
-        radio.setCurrentStation(8);
+        радио -радио = новое  радио ();
+        радиостанция.Настройка текущей станции(8);
         radio.prev();
-        int expected = 7;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
+        ожидаемое  число = 7;
+        фактический  int = radio.getCurrentStation();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
 
     }
 
-    @Test
-    public void testIncreaseVolume() {
+    @Тест
+    testIncreaseVolume  аннулирует  общедоступный() {
 
-        Radio radio = new Radio();
-        radio.setCurrentVolume(7);
-        radio.increaseVolume();
-        int expected = 8;
-        int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected, actual);
-
-    }
-
-    @Test
-    public void testIncreaseVolumeIfMax() {
-
-        Radio radio = new Radio();
-        radio.setCurrentVolume(100);
-        radio.increaseVolume();
-        int expected = 100;
-        int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected, actual);
+        радио -радио = новое  радио ();
+        радио.Установить текущий объем (7);
+        радио.Увеличить объем ();
+        ожидаемое  число = 8;
+        фактический  int = radio.getCurrentVolume();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
 
     }
 
-    @Test
-    public void testRaduceVolume() {
+    @Тест
+    Тест  увеличивает значение, если максимальное значение недействительно  для общественности() {
 
-        Radio radio = new Radio();
-        radio.setCurrentVolume(10);
-        radio.reduceVolume();
-        int expected = 9;
-        int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testRaduceVolumeIfMin() {
-        Radio radio = new Radio();
-        radio.setCurrentVolume(0);
-        radio.reduceVolume();
-        int expected = 0;
-        int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected, actual);
+        радио -радио = новое  радио ();
+        радио.Установить текущий объем (10);
+        радио.Увеличить объем ();
+        ожидаемое  число = 10;
+        фактический  int = radio.getCurrentVolume();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
 
     }
 
+    @Тест
+    Testraduacevolume  аннулирует  общедоступный() {
+        радио -радио = новое  радио ();
+        радио.Установить текущий объем (10);
+        радио.Уменьшить объем ();
+        ожидаемое  число = 9;
+        фактический  int = radio.getCurrentVolume();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
+    }
 
-    @Test
-    public void test1() {
-        Radio radio = new Radio(10);
+    @Тест
+    testraduacevolumeifmin  аннулирует  публичный() {
+        радио -радио = новое  радио ();
+        radio.Set Текущий объем(0);
+        радио.Уменьшить объем ();
+        ожидаемый  результат = 0;
+        фактический  int = radio.getCurrentVolume();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
 
-        Assertions.assertEquals(0, radio.getMinStation());
-        Assertions.assertEquals(9, radio.getMaxStation());
-        Assertions.assertEquals(0, radio.getCurrentStation());
+    }
+
+    @Тест
+    Увеличьте  значение теста, если больше всего аннулирует  public() {
+        радио -радио = новое  радио ();
+        радио.Установить текущий объем (12);
+        радио.Уменьшить объем ();
+        ожидаемый  результат = 0;
+        фактический  int = radio.getCurrentVolume();
+        Утверждения.Значения утверждений (ожидаемые, фактические);
     }
 }
